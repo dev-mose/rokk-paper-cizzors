@@ -1,0 +1,58 @@
+extends Node
+
+var rock = 1
+var paper = 2
+var scissors = 0
+var choice
+var choice2
+var button = Button.new()
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	choice = randi_range(0, 2)
+	choice2 = randi_range(0, 2)
+	
+	button.text = "Rock"
+	button.pressed.connect(_button_pressed)
+	add_child(button)
+	
+	if choice == 0:
+		print("Player 1: Scissors")
+	elif choice == 1:
+		print("Player 1: Rock")
+	elif choice == 2:
+		print("Player 1: Paper")
+		
+	if choice2 == 0:
+		print("Player 2: Scissors")
+	elif choice2 == 1:
+		print("Player 2: Rock")
+	elif choice2 == 2:
+		print("Player 2: Paper")
+	
+	if choice == 0:
+		if choice2 == 0:
+			print("Draw!")
+		elif choice2 == 1:
+			print("You're a fucking loser!")
+		elif choice2 == 2:
+			print("You win!")
+			
+	elif choice == 1:
+		if choice2 == 0:
+			print("You win!")
+		elif choice2 == 1:
+			print("Draw")
+		elif choice2 == 2:
+			print("You're a fucking loser!")
+			
+	elif choice == 2:
+		if choice2 == 0:
+			print("You're a fucking loser!")
+		elif choice2 == 1:
+			print("You win!")
+		elif choice2 == 2:
+			print("Draw")
+		
+func _button_pressed():
+	print("Hello world!")
+		
