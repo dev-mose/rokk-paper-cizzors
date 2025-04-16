@@ -1,19 +1,23 @@
+?? while ( playerHealth > 0 or npcHealth > 0 ) ???
+
 check if user presses "ROCK", "PAPER", "SCISSORS"
     play corresponding animation
     
     set playerChoice to "ROCK = 1" "PAPER = 2" "SCISSORS = 0"
-    get random integer in range from 0 - 2 for npcChoice
+    get randi_range(0, 2) for npcChoice
     
     compare playerChoice to npcChoice
         if player beats npc
             display a win message
-            remove 1 from npc health bar
-        if player loses to npc
+            npcHealth = npcHealth - 1
+        elif player loses to npc
             display a lose message
-            remove 1 from player health bar
+            playerHealth = playerHealth - 1
+        elif player and npc are the same
+            display a draw message
     
-    if playerHealth or npcHealth = 0
-        explode the corresponding hand
-        reset the game
+if playerHealth or npcHealth = 0
+    explode the corresponding hand
+    reset the game
     
   
