@@ -1,0 +1,19 @@
+check if user presses "ROCK", "PAPER", "SCISSORS"
+    play corresponding animation
+    
+    set playerChoice to "ROCK = 1" "PAPER = 2" "SCISSORS = 0"
+    get random integer in range from 0 - 2 for npcChoice
+    
+    compare playerChoice to npcChoice
+        if player beats npc
+            display a win message
+            remove 1 from npc health bar
+        if player loses to npc
+            display a lose message
+            remove 1 from player health bar
+    
+    if playerHealth or npcHealth = 0
+        explode the corresponding hand
+        reset the game
+    
+  
